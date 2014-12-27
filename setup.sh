@@ -15,6 +15,11 @@ wget http://travis-trusty.timvideos.us/$CHROOT_TAR_FILE -O $TRUSTY_TAR
 sudo mkdir /trusty
 (cd /trusty; sudo tar -xvf $TRUSTY_TAR)
 
+# Look at the run script
+wget -O/tmp/run.sh https://raw.githubusercontent.com/mithro/travis-trusty/master/docker-base/run.sh
+md5sum /tmp/run.sh
+md5sum /trusty/run.sh
+
 # Bind mount the required filesystem parts
 for mountpoint in /dev /sys /proc /home; do
   sudo mount -o bind $mountpoint /trusty$mountpoint
