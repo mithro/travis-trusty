@@ -30,3 +30,4 @@ RUN adduser travis sudo
 ADD run.sh /run.sh
 
 USER travis
+WORKDIR /home/travis
