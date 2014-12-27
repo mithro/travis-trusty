@@ -13,7 +13,7 @@ CHROOT_TAR_MD5=$(echo $CHROOT_TAR_INFO | sed -e's/ .*//')
 TRUSTY_TAR=/tmp/ubuntu-trusty-chroot.tar.bz2
 wget http://travis-trusty.timvideos.us/$CHROOT_TAR_FILE -O $TRUSTY_TAR
 sudo mkdir /trusty
-(cd /trusty; sudo tar -xvf $TRUSTY_TAR)
+(cd /trusty; sudo tar -xf $TRUSTY_TAR)
 
 # Look at the run script
 wget -O/tmp/run.sh https://raw.githubusercontent.com/mithro/travis-trusty/master/docker-base/run.sh
