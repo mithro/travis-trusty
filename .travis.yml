@@ -1,8 +1,0 @@
-language: 
- - c
-
-install:
- - ./.travis-trusty-setup.sh
-
-script:
- - ./.travis-trusty-run.sh ./.travis-check.sh

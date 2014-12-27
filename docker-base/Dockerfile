@@ -27,4 +27,6 @@ RUN apt-get -y install git
 RUN adduser --disabled-password --gecos "" travis
 RUN adduser travis sudo
 
+ADD run.sh /run.sh
+
 USER travis

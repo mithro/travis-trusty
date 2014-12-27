@@ -1,1 +1,0 @@
-../.travis-check.sh
