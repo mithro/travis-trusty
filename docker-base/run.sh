@@ -1,4 +1,4 @@
 #!/bin/sh
 set -x
 set -e
-sudo chroot /trusty su $(whoami) -c $@
+sudo -E chroot /trusty su -p $(whoami) -c $@
