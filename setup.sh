@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set +x
+set +e
+
 # Download and extra the trusty chroot
 wget XXXXXX
 sudo mkdir /trusty
