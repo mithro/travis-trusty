@@ -11,11 +11,10 @@ if [ ! -x docker-squash ]; then
 fi
 
 (
-  cd docker-base
-  docker build . | tee ../docker-build.$LOG
+  docker pull mithro/travis-trusty:latest
 )
 
-DOCKER_IMAGE_ID=$(grep "Successfully built" docker-build.$LOG | sed -e's/Successfully built //')
+DOCKER_IMAGE_ID=mithro/travis-trusty:latest
 docker save $DOCKER_IMAGE_ID | sudo ./docker-squash -from root -t mithro/travis-trusty:squashed | docker load
 
 # Create a container as we can't export an image
