@@ -3,6 +3,8 @@
 set -x
 set -e
 
+export TZ=UTC
+
 DATE=$(date +%Y%m%d-%H%M%S)
 LOG="${DATE}.log"
 
