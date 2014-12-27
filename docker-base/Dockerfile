@@ -5,6 +5,8 @@ RUN apt-get -y update && apt-get -y upgrade
 
 # Make sure the keyrings are up to date
 RUN apt-get -y install add-apt-key ubuntu-keyring ubuntu-extras-keyring
+# Get us closer to the travis environment
+RUN apt-get -y install locales
 
 # gst-switch compile stuff
 RUN apt-get -y install build-essential dh-autoreconf
