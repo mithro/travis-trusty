@@ -1,12 +1,15 @@
 FROM ubuntu:14.04
 
 MAINTAINER mithro@mithis.com
-RUN apt-get -y update && apt-get -y upgrade
 
 # Make sure the keyrings are up to date
 RUN apt-get -y install add-apt-key ubuntu-keyring ubuntu-extras-keyring
 # Get us closer to the travis environment
 RUN apt-get -y install locales && locale-gen en_US en_US.UTF-8 && dpkg-reconfigure locales
+RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list
+
+# Update / upgrade everything
+RUN apt-get -y update && apt-get -y upgrade
 
 # gst-switch compile stuff
 RUN apt-get -y install build-essential dh-autoreconf
