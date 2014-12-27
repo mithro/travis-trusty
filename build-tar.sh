@@ -16,10 +16,11 @@ fi
 )
 
 DOCKER_IMAGE_ID=$(grep "Successfully built" docker-build.$LOG | sed -e's/Successfully built //')
-docker save $DOCKER_IMAGE_ID | sudo ./docker-squash -from root -t mithro/travis-trusty:squashed | docker load
+DOCKER_TAG=mithro/travis-trusty:squashed-$DATE
+docker save $DOCKER_IMAGE_ID | sudo ./docker-squash -from root -t $DOCKER_TAG | docker load
 
 # Create a container as we can't export an image
-docker run --cidfile="docker-squashed.$LOG" mithro/travis-trusty:squashed true
+docker run --cidfile="docker-squashed.$LOG" $DOCKER_TAG true
 
 DOCKER_SQUASHED_ID=$(cat docker-squashed.$LOG)
 TAR_FILE=ubuntu-trusty-$DATE-${DOCKER_SQUASHED_ID}.tar
