@@ -28,6 +28,6 @@ ls -l /trusty/run.sh
 md5sum /trusty/run.sh
 
 # Bind mount the required filesystem parts
-for mountpoint in /dev /sys /proc /home; do
+for mountpoint in /dev /sys /proc /home /etc/hosts /etc/resolv.conf; do
   sudo mount -o bind $mountpoint /trusty$mountpoint
 done
