@@ -1,7 +1,7 @@
 #!/bin/bash
 
-set +x
-set +e
+set -x
+set -e
 
 # Get the latest chroot details
 wget http://travis-trusty.timvideos.us/index.txt -O chroot-details.txt
