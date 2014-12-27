@@ -13,7 +13,7 @@ CHROOT_TAR_MD5=$(echo $CHROOT_TAR_INFO | sed -e's/ .*//')
 TRUSTY_TAR=/tmp/ubuntu-trusty-chroot.tar.bz2
 wget http://travis-trusty.timvideos.us/$CHROOT_TAR_FILE -O $TRUSTY_TAR
 sudo mkdir /trusty
-sudo tar -xvf $TRUSTY_TAR /trusty
+(cd /trusty; sudo tar -xvf $TRUSTY_TAR)
 
 # Bind mount the required filesystem parts
 for mountpoint in /dev /sys /proc /home; do
