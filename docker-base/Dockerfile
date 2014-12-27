@@ -1,6 +1,7 @@
 FROM ubuntu:14.04
 
 MAINTAINER mithro@mithis.com
+RUN apt-get -y update
 
 # Make sure the keyrings are up to date
 RUN apt-get -y install add-apt-key ubuntu-keyring ubuntu-extras-keyring
