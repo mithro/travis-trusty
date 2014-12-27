@@ -16,11 +16,16 @@ sudo mkdir /trusty
 (cd /trusty; sudo tar -xf $TRUSTY_TAR)
 
 # Look at the run script
-wget -O/tmp/run.sh https://raw.githubusercontent.com/mithro/travis-trusty/master/docker-base/run.sh
-md5sum /tmp/run.sh
+wget -O /tmp/run.sh https://raw.githubusercontent.com/mithro/travis-trusty/master/docker-base/run.sh
+cat /tmp/run.sh
 sudo chmod a+x /tmp/run.sh
+ls -l /tmp/run.sh
+md5sum /tmp/run.sh
+
+cat /trusty/run.sh
+sudo chmod a+rx /trusty/run.sh
+ls -l /trusty/run.sh
 md5sum /trusty/run.sh
-sudo chmod a+x /trusty/run.sh
 
 # Bind mount the required filesystem parts
 for mountpoint in /dev /sys /proc /home; do
