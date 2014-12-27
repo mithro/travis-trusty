@@ -21,7 +21,7 @@ docker save $DOCKER_IMAGE_ID | sudo ./docker-squash -from root -t mithro/travis-
 docker run --cidfile="docker-squashed.$LOG" mithro/travis-trusty:squashed true
 
 DOCKER_SQUASHED_ID=$(cat docker-squashed.$LOG)
-TAR_FILE=ubuntu-trusty-${DOCKER_SQUASHED_ID}.tar
+TAR_FILE=ubuntu-trusty-$DATE-${DOCKER_SQUASHED_ID}.tar
 docker export $DOCKER_SQUASHED_ID > $TAR_FILE
 tar -tf $TAR_FILE > ${TAR_FILE}.list
 bzip2 --best $TAR_FILE
