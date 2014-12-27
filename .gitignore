@@ -1,2 +1,3 @@
 docker-squash
-ubuntu-trusty.tar
+ubuntu-trusty*.tar*
+*.log
