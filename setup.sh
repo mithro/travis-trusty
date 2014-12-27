@@ -3,7 +3,7 @@
 set -e
 
 # Get the latest chroot details
-wget http://travis-trusty.timvideos.us/index.txt -O chroot-details.txt
+wget -q http://travis-trusty.timvideos.us/index.txt -O chroot-details.txt
 CHROOT_TAR_INFO=$(cat chroot-details.txt | grep tar.bz2 | tail -n 1)
 CHROOT_TAR_FILE=$(echo $CHROOT_TAR_INFO | sed -e's/[^ ]* //')
 CHROOT_TAR_MD5=$(echo $CHROOT_TAR_INFO | sed -e's/ .*//')
