@@ -39,9 +39,9 @@ RUN adduser travis sudo
 RUN cat /etc/sudoers
 RUN sed -i -e's/%sudo	ALL=(ALL:ALL) ALL/%sudo	ALL=(ALL:ALL) NOPASSWD:ALL/' /etc/sudoers
 
-ADD run.sh /run.sh
-ADD run-stage2.sh /run-stage2.sh
-RUN chmod a+rx /run*.sh
+ADD run.py /run.py
+ADD run-stage2.py /run-stage2.py
+RUN chmod a+rx /run*.py
 
 USER travis
 WORKDIR /home/travis

@@ -16,12 +16,12 @@ echo "Extracting $TRUSTY_TAR"
 (cd /trusty; sudo tar -xf $TRUSTY_TAR)
 
 # Look at the run script
-sudo wget -q -O/trusty/run.sh https://raw.githubusercontent.com/mithro/travis-trusty/master/docker-base/run.sh
-sudo wget -q -O/trusty/run-stage2.sh https://raw.githubusercontent.com/mithro/travis-trusty/master/docker-base/run-stage2.sh
-sudo chmod a+rx /trusty/run*.sh
-ls -l /trusty/run*.sh
-md5sum /trusty/run*.sh
-cat /trusty/run*.sh
+sudo wget -q -O/trusty/run.py https://raw.githubusercontent.com/mithro/travis-trusty/master/docker-base/run.py
+sudo wget -q -O/trusty/run-stage2.py https://raw.githubusercontent.com/mithro/travis-trusty/master/docker-base/run-stage2.py
+sudo chmod a+rx /trusty/run*.py
+ls -l /trusty/run*.py
+md5sum /trusty/run*.py
+cat /trusty/run*.py
 
 # Bind mount the required filesystem parts
 for mountpoint in /dev /sys /proc /home /etc/hosts /etc/resolv.conf; do
