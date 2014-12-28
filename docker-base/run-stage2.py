@@ -1,7 +1,9 @@
 #!/usr/bin/python
 import sys
 import os
-print "argv", repr(sys.argv)
+if "DEBUG_TRUSTY" in os.environ:
+    print "argv", repr(sys.argv)
 os.chdir(sys.argv[1])
-print "exec", repr(sys.argv[2:])
+if "DEBUG_TRUSTY" in os.environ:
+    print "exec", repr(sys.argv[2:])
 os.execlp(*sys.argv[2:])
