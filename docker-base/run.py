@@ -8,4 +8,4 @@ if "DEBUG_TRUSTY" in os.environ:
 cmd = ["sudo", "-E", "chroot", "/trusty", "su", "-p", os.environ['USER'], "-c", " ".join('"%s"' % a for a in stage2)]
 if "DEBUG_TRUSTY" in os.environ:
     print " cmd", repr(cmd)
-os.execlp(*cmd)
+os.execlp("sudo", *cmd)
