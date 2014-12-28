@@ -41,6 +41,7 @@ RUN sed -i -e's/%sudo	ALL=(ALL:ALL) ALL/%sudo	ALL=(ALL:ALL) NOPASSWD:ALL/' /etc/
 
 ADD run.sh /run.sh
 ADD run-stage2.sh /run-stage2.sh
+RUN chmod a+rx /run*.sh
 
 USER travis
 WORKDIR /home/travis
