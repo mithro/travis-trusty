@@ -21,10 +21,10 @@ RUN apt-get -y install gstreamer1.0.* libgstreamer.*1.0.*
 RUN apt-get -y install python-software-properties python-pip
 RUN apt-get -y install libglib2.0-dev gir1.2-glib-2.0 libgirepository1.0-dev libglib2.0-0 python-gi
 RUN apt-get -y install python-scipy
-RUN pip install mock
-RUN pip install pytest-cov
-RUN pip install pytest-pep8
-RUN pip install pylint
+RUN pip install mock --upgrade
+RUN pip install pytest-cov --upgrade
+RUN pip install pytest-pep8 --upgrade
+RUN pip install pylint --upgrade
 
 # Needed for tests
 RUN apt-get -y install wget libav-tools
