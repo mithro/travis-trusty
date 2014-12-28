@@ -16,6 +16,7 @@ echo "Extracting $TRUSTY_TAR"
 (cd /trusty; sudo tar -xf $TRUSTY_TAR)
 
 # Look at the run script
+sudo wget -q -O/trusty/run-stage2.sh https://raw.githubusercontent.com/mithro/travis-trusty/master/docker-base/run-stage2.sh
 sudo chmod a+rx /trusty/run*.sh
 ls -l /trusty/run*.sh
 md5sum /trusty/run*.sh
