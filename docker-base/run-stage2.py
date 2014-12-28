@@ -2,6 +2,7 @@
 import sys
 import os
 if "DEBUG_TRUSTY" in os.environ:
+    print " env", repr(os.environ)
     print "argv", repr(sys.argv)
 os.chdir(sys.argv[1])
 if "DEBUG_TRUSTY" in os.environ:
