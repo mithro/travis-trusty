@@ -16,10 +16,10 @@ echo "Extracting $TRUSTY_TAR"
 (cd /trusty; sudo tar -xf $TRUSTY_TAR)
 
 # Look at the run script
-sudo chmod a+rx /trusty/run.sh
-ls -l /trusty/run.sh
-md5sum /trusty/run.sh
-cat /trusty/run.sh
+sudo chmod a+rx /trusty/run*.sh
+ls -l /trusty/run*.sh
+md5sum /trusty/run*.sh
+cat /trusty/run*.sh
 
 # Bind mount the required filesystem parts
 for mountpoint in /dev /sys /proc /home /etc/hosts /etc/resolv.conf; do
