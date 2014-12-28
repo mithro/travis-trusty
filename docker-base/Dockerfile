@@ -40,6 +40,7 @@ RUN cat /etc/sudoers
 RUN sed -i -e's/%sudo	ALL=(ALL:ALL) ALL/%sudo	ALL=(ALL:ALL) NOPASSWD:ALL/' /etc/sudoers
 
 ADD run.sh /run.sh
+ADD run-stage2.sh /run-stage2.sh
 
 USER travis
 WORKDIR /home/travis
