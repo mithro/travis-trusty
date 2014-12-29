@@ -24,6 +24,7 @@ md5sum /trusty/run*.py
 cat /trusty/run*.py
 
 # Bind mount the required filesystem parts
+# Uses --rbind to all sub-filesystems are also bound.
 for mountpoint in /dev /sys /proc /home /etc/hosts /etc/resolv.conf; do
-  sudo mount -o bind $mountpoint /trusty$mountpoint
+  sudo mount --rbind $mountpoint /trusty$mountpoint
 done
