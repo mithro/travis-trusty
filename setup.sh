@@ -11,8 +11,7 @@ CHROOT_TAR_MD5=$(echo $CHROOT_TAR_INFO | sed -e's/ .*//')
 # Download and extra the trusty chroot
 sudo mkdir /trusty
 sudo mount -t tmpfs tmpfs /trusty
-TRUSTY_TAR=/tmp/ubuntu-trusty-chroot.tar.bz2
-wget http://travis-trusty.timvideos.us/$CHROOT_TAR_FILE -O- | (cd /trusty; sudo tar -xf -)
+wget http://travis-trusty.timvideos.us/$CHROOT_TAR_FILE -O- | (cd /trusty; sudo tar -jxf -)
 
 # Look at the run script
 #sudo wget -q -O/trusty/run.py https://raw.githubusercontent.com/mithro/travis-trusty/master/docker-base/run.py
