@@ -14,7 +14,7 @@ fi
 
 (
   cd docker-base
-  docker build . | tee ../docker-build.$LOG
+  docker build --no-cache=true . | tee ../docker-build.$LOG
 )
 
 DOCKER_IMAGE_ID=$(grep "Successfully built" docker-build.$LOG | sed -e's/Successfully built //')
