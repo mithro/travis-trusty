@@ -9,7 +9,7 @@ DATE=$(date +%Y%m%d-%H%M%S)
 LOG="${DATE}.log"
 
 if [ ! -x docker-squash ]; then
-  wget https://github.com/jwilder/docker-squash/releases/download/v0.0.11/docker-squash-linux-amd64-v0.0.11.tar.gz -O- | tar -zx
+  wget https://github.com/jwilder/docker-squash/releases/download/v0.1.0/docker-squash-linux-amd64-v0.1.0.tar.gz -O- | tar -zx
 fi
 
 (
